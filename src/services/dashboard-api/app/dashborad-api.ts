@@ -3,6 +3,7 @@ import { ForControlAuthenticating } from "../ports/driven/for-control-authentica
 import { ForRepoQuerying } from "../ports/driven/for-repo-querying";
 import { AuthenticatedUser, User } from "./schemas";
 
+
 export class DashboardApi implements ForAuthenticating {
     constructor(
         private readonly controlAuthenticator: ForControlAuthenticating, 
@@ -25,9 +26,8 @@ export class DashboardApi implements ForAuthenticating {
         const result = {
             ...user,
             ...authDetails,
-            permissions
+            permissions,
         }
-        console.log('result login', result)
             
 
         return result
@@ -49,7 +49,7 @@ export class DashboardApi implements ForAuthenticating {
         const result = {
             ...newUser,
             ...authDetails,
-            permissions
+            permissions,
         }
 
         return result
